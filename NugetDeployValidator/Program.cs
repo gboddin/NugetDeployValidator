@@ -12,11 +12,16 @@ namespace NugetDeployValidator
     {
         public static async Task Main(string[] args)
         {
+            if (args.Length < 2)
+            {
+                Console.WriteLine("Two arguments required: <local nuget directory> <remote nuget feed>");
+                Environment.Exit(1);
+            }
             // Local directory 
             string localRepositoryPath = args[0];
             // Remote nuget feed
             string nugetFeedAddress = $"{args[1]}/v3/index.json";
-
+            
             // Won't log a thing, sorry
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
