@@ -20,7 +20,7 @@ namespace NugetDeployValidator
             // Local directory 
             string localRepositoryPath = args[0];
             // Remote nuget feed
-            string nugetFeedAddress = $"{args[1]}/v3/index.json";
+            string nugetFeedAddress = args[1];
             
             // Won't log a thing, sorry
             ILogger logger = NullLogger.Instance;

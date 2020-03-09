@@ -13,7 +13,7 @@ Return code is :
 ### Project
 
 ```
-$ dotnet run --project /app/NugetDeployValidator/NugetDeployValidator /nugets https://api.nuget.org
+$ dotnet run --project /app/NugetDeployValidator/NugetDeployValidator /nugets https://api.nuget.org/v3/index.json
 Found local package AwesomeLib.Common 2.0.13
 WARNING: Package AwesomeLib.Common already deployed at version 2.0.13
 $ echo $?
@@ -25,7 +25,7 @@ $ echo $?
 Usable in CI systems
 
 ```
-$ docker run -v /nugets:/nugets gboo/ndv /nugets https://api.nuget.org
+$ docker run -v /nugets:/nugets gboo/ndv /nugets https://api.nuget.org/v3/index.json
 Found local package AwesomeLib.Common 2.0.13
 WARNING: Package AwesomeLib.Common already deployed at version 2.0.13
 $ echo $?
